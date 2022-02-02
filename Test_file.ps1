@@ -8,15 +8,15 @@
 
 Connect-MicrosoftTeams
 
-$group = New-Team -MailNickname "CUSTOMER_SPTSAP" -displayname "CUSTOMER - SAP SPT" -Visibility "private"
+$group = New-Team -MailNickname "CustomerSampleTeam_SPTSAP" -displayname "Customer Sample - SAP SPT Team" -Visibility "private"
     Add-TeamUser -GroupId $group.GroupId -User "trshane@microsoft.com"
-    Add-TeamUser -GroupId $group.GroupId -User "peter.westenbroek@microsoft.com" -role Owner
-    Add-TeamUser -GroupId $group.GroupId -User "amlal@microsoft.com"
-    Add-TeamUser -GroupId $group.GroupId -User "sthirunethir@microsoft.com"
-    New-TeamChannel -GroupId $group.GroupId -DisplayName "A - SAP SPT"
+    Add-TeamUser -GroupId $group.GroupId -User "joseph.derkos@microsoft.com" -role Owner
+    Add-TeamUser -GroupId $group.GroupId -User "matthew.hacker@microsoft.com"
+    
+    
 
 
-    Set-Team -GroupId $group.GroupId -DisplayName "CUSTOMER - SAP SPT" 
+    Set-Team -GroupId $group.GroupId -DisplayName "CUSTOMER2 - SAP SPT" 
     -Description "Team to coordinate SAP SPT work with CUSTOMER" 
     -MailNickName" CUSTOMER_SPTSAP" 
     -AllowAddRemoveApps $TRUE 
@@ -76,3 +76,6 @@ $group = New-Team -MailNickname "CUSTOMER_SPTSAP" -displayname "CUSTOMER - SAP S
     catch {
         write-host "Error: $($_.Exception.Message)" -foregroundcolor Red
     }
+
+
+    
